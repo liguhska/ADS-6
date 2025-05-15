@@ -3,7 +3,7 @@
 #define INCLUDE_TPQUEUE_H_
 
 #include <iostream>
-
+#include <stdexcept>
 struct SYM {
 	char ch;
 	int prior;
@@ -21,7 +21,7 @@ private:
 	Node* head;
 
 public:
-	TPQueue() : head(nulltr) {}
+	TPQueue() : head(nullptr) {}
 	~TPQueue() {
 		while (head != nullptr) {
 			Node* temp = head;
@@ -52,7 +52,7 @@ public:
 
 	T pop() {
 		if (isEmpty()) {
-			throw std::out_of_range("Oueue is empty");
+			throw std::out_of_range("Queue is empty");
 		}
 
 		Node* temp = head;

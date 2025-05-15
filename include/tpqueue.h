@@ -11,16 +11,16 @@ struct SYM {
 
 template<typename T>
 class TPQueue {
-private:
+ private:
   struct Node {
     T data;
     Node* next;
-    Node(T value) : data(value), next(nullptr) {}
+    explicit Node(T value) : data(value), next(nullptr) {}
   };
 
   Node* head;
 
-public:
+ public:
   TPQueue() : head(nullptr) {}
   ~TPQueue() {
     while (head != nullptr) {
